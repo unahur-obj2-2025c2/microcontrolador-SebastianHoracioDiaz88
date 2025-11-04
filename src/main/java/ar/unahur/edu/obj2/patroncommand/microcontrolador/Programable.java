@@ -12,7 +12,7 @@ public interface Programable {
 
     Integer getProgramCounter();
 
-    void setAcumuladorA(Integer value);
+    void setAcumuladorA(Integer micro);
 
     Integer getAcumuladorA();
 
