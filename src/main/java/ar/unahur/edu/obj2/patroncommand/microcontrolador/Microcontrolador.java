@@ -72,4 +72,20 @@ public class Microcontrolador implements Programable {
         Arrays.asList(new Integer[1024]);
     }
 
+    @Override
+    public Programable copiar() {
+        Microcontrolador nuevo = new Microcontrolador();
+        nuevo.acumuladorA = this.acumuladorA;
+        nuevo.acumuladorB = this.acumuladorB;
+        nuevo.programCounter = this.programCounter;
+        return nuevo;
+    }
+
+    @Override
+    public void copiarDesde(Programable microDeRespaldo) {
+        this.acumuladorA = microDeRespaldo.getAcumuladorA();
+        this.acumuladorB = microDeRespaldo.getAcumuladorB();
+        this.programCounter = microDeRespaldo.getProgramCounter();
+    }
+
 }

@@ -3,7 +3,7 @@ package ar.unahur.edu.obj2.patroncommand.invocador;
 import java.util.ArrayList;
 import java.util.List;
 
-import ar.unahur.edu.obj2.patroncommand.microcontrolador.Microcontrolador;
+import ar.unahur.edu.obj2.patroncommand.microcontrolador.Programable;
 import ar.unahur.edu.obj2.patroncommand.operaciones.Operable;
 
 public class Programa {
@@ -22,8 +22,11 @@ public class Programa {
         operaciones.clear();
     }
 
-    public void ejecutar(Microcontrolador micro){
+    public void ejecutar(Programable micro){
         micro.run(operaciones);
     }
 
+    public void resetearMicro (Programable micro) {
+        micro.reset();
+    }
 }
