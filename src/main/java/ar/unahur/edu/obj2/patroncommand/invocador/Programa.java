@@ -1,0 +1,29 @@
+package ar.unahur.edu.obj2.patroncommand.invocador;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import ar.unahur.edu.obj2.patroncommand.microcontrolador.Microcontrolador;
+import ar.unahur.edu.obj2.patroncommand.operaciones.Operable;
+
+public class Programa {
+
+    List<Operable> operaciones;
+
+    public Programa() {
+        this.operaciones = new ArrayList<>();
+    }
+
+    public void agregarOperacion(Operable operacion){
+        operaciones.add(operacion);
+    }
+
+    public void vaciarLista() {
+        operaciones.clear();
+    }
+
+    public void ejecutar(Microcontrolador micro){
+        micro.run(operaciones);
+    }
+
+}
